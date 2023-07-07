@@ -1,0 +1,53 @@
+<dx-popup
+  [resizeEnabled]="resizeEnable && !fullScreenEnabled"
+  maxWidth="90%"
+  [minWidth]="minWidth"
+  [width]="settings?.window?.width || width"
+  maxHeight="90%"
+  [minHeight]="minHeight"
+  [height]="settings?.window?.height || height"
+  [visible]="(visible$ | async) || false"
+  [fullScreen]="fullScreenEnabled"
+  [dragEnabled]="!fullScreenEnabled"
+  class="window__template"
+  (onShown)="onShown($event)"
+  (onHiding)="close()"
+  [wrapperAttr]="{
+    class: savePosition
+      ? 'window__template wait-load-settings'
+      : 'window__template'
+  }"
+  [shading]="false"
+>
+  <ng-container *dxTemplate="let data of 'content'">
+    <div class="content__container">
+      <div class="content__container__body">
+        <ng-content select="[appWindowTemplateBody]"></ng-content>
+      </div>
+      <div class="content__container__footer">
+        <ng-content select="[appWindowTemplateFooter]"></ng-content>
+      </div>
+    </div>
+  </ng-container>
+  <div class="dxPopupTitleCustom" *dxTemplate="let data of 'title'">
+    <div class="grid">
+      <div class="title__container vertical-center overflow">
+        <div class="title__container__wrapper vertical-center overflow">
+          <span class="overflow" [title]="title">
+            {{ title }}
+          </span>
+        </div>
+        <div class="title__container__users__controls ml-5">
+          <ng-content select="[appWindowTemplateTitle]"></ng-content>
+        </div>
+      </div>
+      <div class="popup__controls">
+        <div class="window__btns">
+          <button class="header__button header__button--minimize"></button>
+          <button class="header__button header__button--maximize"></button>
+          <button class="header__button header__button--close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</dx-popup>

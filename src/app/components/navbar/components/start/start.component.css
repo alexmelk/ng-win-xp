@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+}
+
+.start__menu {
+  display: flex;
+}
+
+.start__menu :hover {
+  filter: brightness(105%);
+}
+
+img {
+  height: 30px;
+}
