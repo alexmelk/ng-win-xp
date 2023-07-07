@@ -45,7 +45,10 @@
         <div class="window__btns">
           <button class="header__button header__button--minimize"></button>
           <button class="header__button header__button--maximize"></button>
-          <button class="header__button header__button--close"></button>
+          <button
+            class="header__button header__button--close"
+            (click)="visible = false"
+          ></button>
         </div>
       </div>
     </div>
