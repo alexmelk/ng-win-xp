@@ -5,6 +5,7 @@ import { DesktopModule } from './pages/desktop/desktop.module';
 import { RouterModule, Routes } from '@angular/router';
 import { LoaderComponent } from './pages/loader/loader.component';
 import { DesktopComponent } from './pages/desktop/desktop.component';
+import { DynamicHostModule } from './shared/components/dynamic-host/dynamic-host.module';
 
 const routes: Routes = [
   { path: 'desktop', component: DesktopComponent },
@@ -12,7 +13,12 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, DesktopModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    DesktopModule,
+    DynamicHostModule,
+    RouterModule.forRoot(routes),
+  ],
   exports: [RouterModule],
   bootstrap: [AppComponent],
 })

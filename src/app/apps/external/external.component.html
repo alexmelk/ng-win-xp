@@ -1,0 +1,26 @@
+<app-window-template
+  [visible]="true"
+  height="500"
+  minWidth="630"
+  class="external"
+>
+  <ng-container appWindowTemplateBody>
+    <div class="body">
+      <div class="body__container">
+        <iframe
+          #iframe
+          [attr.src]="appLink | urlResourceSanitizer"
+          style="
+            min-width: 0px;
+            min-height: 0px;
+            flex: 1 1 1px;
+            height: 100%;
+            width: 100%;
+          "
+        ></iframe>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container appWindowTemplateFooter> </ng-container>
+</app-window-template>
