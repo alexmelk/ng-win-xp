@@ -1,12 +1,23 @@
 <div class="container">
   <body>
-    <app-ie></app-ie>
-    <!-- <app-winamp></app-winamp> -->
-    <!-- <app-external
-      [appLink]="'https://98.js.org/programs/pinball/space-cadet.html'"
-    ></app-external> -->
+    <div class="flex flex-direction-column">
+      <div *ngFor="let item of externalApps" class="icon__container">
+        <div class="icon" (dblclick)="openExternalApp(item.name)">
+          <img [attr.src]="item.icon" />
+          <span class="icon__title">{{ item.name }}</span>
+        </div>
+      </div>
+      <div class="icon__container">
+        <div class="icon" (dblclick)="winamp.start()">
+          <img [attr.src]="winAmpInfo.icon" />
+          <span class="icon__title"> {{ winAmpInfo.name }}</span>
+        </div>
+      </div>
+    </div>
   </body>
   <footer>
     <app-navbar></app-navbar>
   </footer>
+  <app-ie></app-ie>
+  <app-winamp #winamp></app-winamp>
 </div>

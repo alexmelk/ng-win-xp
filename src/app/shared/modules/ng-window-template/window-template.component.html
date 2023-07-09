@@ -44,7 +44,10 @@
       <div class="popup__controls">
         <div class="window__btns">
           <button class="header__button header__button--minimize"></button>
-          <button class="header__button header__button--maximize"></button>
+          <button
+            class="header__button header__button--maximize"
+            (click)="toggleFullScreen()"
+          ></button>
           <button
             class="header__button header__button--close"
             (click)="visible = false"

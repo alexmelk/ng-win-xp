@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import Webamp, { Track } from 'webamp';
 
 @Component({
@@ -6,10 +6,10 @@ import Webamp, { Track } from 'webamp';
   templateUrl: './winamp.component.html',
   styleUrls: ['./winamp.component.less'],
 })
-export class WinampComponent implements OnInit {
+export class WinampComponent {
   constructor() {}
 
-  ngOnInit() {
+  start() {
     const el: HTMLElement =
       document.getElementById('app__winamp') || new HTMLElement();
     const webamp = new Webamp({
