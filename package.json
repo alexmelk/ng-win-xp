@@ -1,6 +1,6 @@
 {
-  "name": "portfolio-win-xp",
-  "version": "0.0.0",
+  "name": "win-xp-ui",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
