@@ -3,7 +3,20 @@
   height="500"
   minWidth="630"
   class="external"
+  (onClosed)="ngOnDestroy()"
 >
+  <ng-container appWindowTemplateTitle>
+    <header class="app__header">
+      <img
+        [src]="externalAppInfo?.icon || ''"
+        alt="Internet Explorer"
+        class="app__header__icon"
+        draggable="false"
+      />
+      <div class="app__header__title">{{ externalAppInfo?.name }}</div>
+    </header>
+  </ng-container>
+
   <ng-container appWindowTemplateBody>
     <div class="body">
       <div class="body__container">
