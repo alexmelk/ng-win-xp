@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoaderComponent } from './pages/loader/loader.component';
 import { DesktopComponent } from './pages/desktop/desktop.component';
 import { DynamicHostModule } from './shared/components/dynamic-host/dynamic-host.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   { path: 'desktop', component: DesktopComponent },
@@ -18,6 +19,9 @@ const routes: Routes = [
     DesktopModule,
     DynamicHostModule,
     RouterModule.forRoot(routes),
+  ],
+  providers: [
+    [Location, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   ],
   exports: [RouterModule],
   bootstrap: [AppComponent],
