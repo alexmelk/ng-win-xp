@@ -9,16 +9,18 @@ import Webamp, { Track } from 'webamp';
 export class WinampComponent {
   constructor() {}
 
-  start() {
+  async start() {
     const el: HTMLElement =
       document.getElementById('app__winamp') || new HTMLElement();
     const webamp = new Webamp({
       initialTracks: [
         <Track>{
-          url: '../../assets/tracks/Scorpions_-_Send_Me_An_Angel_47852025.mp3',
+          blob: await fetch(
+            '../../assets/tracks/Scorpions_-_Send_Me_An_Angel_47852025.mp3'
+          ).then((r) => r.blob()),
         },
       ],
     });
-    webamp.renderWhenReady(el);
+    await webamp.renderWhenReady(el);
   }
 }
