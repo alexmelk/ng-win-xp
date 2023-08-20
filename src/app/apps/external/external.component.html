@@ -1,8 +1,8 @@
 <app-window-template
   [visible]="true"
-  height="90%"
+  [height]="externalAppInfo?.height || '90%'"
   minWidth="20%"
-  width="50%"
+  [width]="externalAppInfo?.width || '50%'"
   class="external"
   (onClosed)="ngOnDestroy()"
 >
