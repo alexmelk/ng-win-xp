@@ -1,6 +1,6 @@
 <div class="container">
   <body>
-    <div class="flex flex-direction-column">
+    <div class="flex flex-direction-column desktop">
       <div *ngFor="let item of externalApps" class="icon__container">
         <div class="icon" (dblclick)="openExternalApp(item.name)">
           <img [attr.src]="item.icon" />
