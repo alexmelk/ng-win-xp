@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "devextreme": "^22.2.4",
     "devextreme-angular": "^22.2.4",
     "devextreme-schematics": "^1.5.1",

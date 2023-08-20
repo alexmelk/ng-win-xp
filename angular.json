@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "portfolio-win-xp": {
+    "ng-win-xp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/portfolio-win-xp",
+            "outputPath": "dist/ng-win-xp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,6 +29,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "node_modules/devextreme/dist/css/dx.light.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.less"
             ],
             "scripts": []
@@ -70,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "portfolio-win-xp:build:production"
+              "browserTarget": "ng-win-xp:build:production"
             },
             "development": {
-              "browserTarget": "portfolio-win-xp:build:development"
+              "browserTarget": "ng-win-xp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "portfolio-win-xp:build"
+            "browserTarget": "ng-win-xp:build"
           }
         },
         "test": {
@@ -100,5 +101,5 @@
       }
     }
   },
-  "defaultProject": "portfolio-win-xp"
+  "defaultProject": "ng-win-xp"
 }
