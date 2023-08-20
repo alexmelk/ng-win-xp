@@ -19,4 +19,4 @@ jobs:
         server: ${{ secrets.ftp_url }}
         username: ${{ secrets.ftp_login }}
         password: ${{ secrets.ftp_password }}
-        local-dir: './dist/ng-win-xp'
+        local-dir: './dist/ng-win-xp/'
